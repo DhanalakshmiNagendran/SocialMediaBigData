@@ -1,0 +1,9 @@
+backend/target/
+.idea/
+.vscode/
+*.iml
+*.class
+*.log
+Thumbs.db
+.DS_Store
+data/social_media.xlsx

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Social Media Big Data Analytics</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="top-header">
+
+    <div>
+        <h1>Social Media Analytics</h1>
+        <p>Big Data Engagement Dashboard</p>
+    </div>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        Hadoop Connected
+    </div>
+
+</header>
+
+
+<main class="dashboard">
+
+
+<!-- ================= SUMMARY CARDS ================= -->
+
+<section class="summary-grid">
+
+    <div class="summary-card">
+
+        <div class="card-title">
+            TOTAL POSTS
+        </div>
+
+        <div class="card-value"
+             id="totalPosts">
+            0
+        </div>
+
+        <div class="card-subtitle">
+            Social Media Posts
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div class="card-title">
+            TOTAL LIKES
+        </div>
+
+        <div class="card-value"
+             id="totalLikes">
+            0
+        </div>
+
+        <div class="card-subtitle">
+            User Interactions
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div class="card-title">
+            COMMENTS
+        </div>
+
+        <div class="card-value"
+             id="totalComments">
+            0
+        </div>
+
+        <div class="card-subtitle">
+            User Responses
+        </div>
+
+    </div>
+
+
+    <div class="summary-card">
+
+        <div class="card-title">
+            SHARES
+        </div>
+
+        <div class="card-value"
+             id="totalShares">
+            0
+        </div>
+
+        <div class="card-subtitle">
+            Content Shares
+        </div>
+
+    </div>
+
+
+    <div class="summary-card highlight-card">
+
+        <div class="card-title">
+            TOTAL ENGAGEMENT
+        </div>
+
+        <div class="card-value"
+             id="totalEngagement">
+            0
+        </div>
+
+        <div class="card-subtitle">
+            Overall Interaction
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CHART ROW 1 ================= -->
+
+<section class="chart-grid">
+
+
+    <div class="dashboard-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Platform Engagement</h2>
+                <p>Total engagement by platform</p>
+            </div>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="platformChart"></canvas>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="dashboard-panel">
+
+        <div class="panel-header">
+
+            <div>
+                <h2>Engagement Metrics</h2>
+                <p>Likes, comments and shares</p>
+            </div>
+
+        </div>
+
+        <div class="chart-container">
+
+            <canvas id="metricsChart"></canvas>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PLATFORM TABLE ================= -->
+
+<section class="dashboard-panel">
+
+    <div class="panel-header">
+
+        <div>
+
+            <h2>Top Channels by Engagement</h2>
+
+            <p>
+                Platform-wise social media performance
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Platform</th>
+
+                    <th>Likes</th>
+
+                    <th>Comments</th>
+
+                    <th>Shares</th>
+
+                    <th>Total Engagement</th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="platformTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= INSIGHTS ================= -->
+
+<section class="dashboard-panel">
+
+    <div class="panel-header">
+
+        <div>
+
+            <h2>Engagement Insights</h2>
+
+            <p>
+                Important patterns identified from the data
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div id="insights"
+         class="insights-grid">
+
+        Loading analytics...
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= DATA SOURCE ================= -->
+
+<section class="data-source-panel">
+
+    <div>
+
+        <strong>Data Processing Pipeline</strong>
+
+        <p>
+            CSV → HDFS → Hadoop MapReduce → Java Backend → Dashboard
+        </p>
+
+    </div>
+
+    <div class="pipeline-status">
+
+        <span class="status-dot"></span>
+
+        Processing Ready
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+    Social Media Big Data Analytics
+    <span>•</span>
+    Hadoop MapReduce Project
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

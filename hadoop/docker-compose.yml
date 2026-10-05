@@ -1,0 +1,42 @@
+services:
+
+  namenode:
+    image: apache/hadoop:3.4.3
+    container_name: socialmedia-namenode
+    hostname: namenode
+    ports:
+      - "9870:9870"
+      - "9000:9000"
+    volumes:
+      - namenode_data:/opt/hadoop/data/nameNode
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+    command: >
+      bash -c "
+      hdfs namenode -format -force &&
+      hdfs namenode
+      "
+
+  datanode:
+    image: apache/hadoop:3.4.3
+    container_name: socialmedia-datanode
+    hostname: datanode
+    depends_on:
+      - namenode
+    ports:
+      - "9864:9864"
+      - "9866:9866"
+      - "9867:9867"
+    volumes:
+      
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+    command: >
+      bash -c "
+      sleep 10 &&
+      hdfs datanode
+      "
+
+volumes:
+  namenode_data:
+  datanode_data:
